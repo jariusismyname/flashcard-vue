@@ -2,6 +2,7 @@
   <div>
     <h1>Welcome to Flashcard Home</h1>
     <button @click="goToMyFlashcard">My Flashcard</button>
+    <button @click="goToViewFlashcards">View Flashcards</button> <!-- New button -->
     <button @click="logout">Logout</button>
   </div>
 </template>
@@ -21,10 +22,18 @@ export default {
     };
 
     const goToMyFlashcard = () => {
-      router.push("/add-flashcard"); // This route should point to SaveFlashcard.vue
+      router.push("/add-flashcard"); // Route to SaveFlashcard.vue
     };
 
-    return { logout, goToMyFlashcard };
+    const goToViewFlashcards = () => {
+      router.push("/view-flashcards"); // Route to ViewFlashcards.vue (make sure it's defined in your router)
+    };
+
+    return {
+      logout,
+      goToMyFlashcard,
+      goToViewFlashcards
+    };
   },
 };
 </script>
