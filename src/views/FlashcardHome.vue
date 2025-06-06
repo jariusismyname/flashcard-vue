@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Welcome to Flashcard Home</h1>
+    <button @click="goToMyFlashcard">My Flashcard</button>
     <button @click="logout">Logout</button>
   </div>
 </template>
@@ -19,7 +20,11 @@ export default {
       router.push("/login");
     };
 
-    return { logout };
+    const goToMyFlashcard = () => {
+      router.push("/add-flashcard"); // This route should point to SaveFlashcard.vue
+    };
+
+    return { logout, goToMyFlashcard };
   },
 };
 </script>

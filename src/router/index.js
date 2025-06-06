@@ -2,14 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import FlashcardHome from "../views/FlashcardHome.vue";
-
-
-
-
-
-
+import AddFlashcard from "../views/AddFlashcard.vue";
 
 const routes = [
+    { path: "/add-flashcard", component: AddFlashcard },
   { path: "/", redirect: "/login" },
   { path: "/login", component: Login },
   { path: "/register", component: Register },
