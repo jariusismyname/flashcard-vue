@@ -126,7 +126,7 @@ const editFlashcardsForSubject = () => {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+  /* background: linear-gradient(to bottom right, #1e3c72, #2a5298); */
   font-family: 'Segoe UI', sans-serif;
   padding: 2rem;
 }

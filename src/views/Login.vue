@@ -45,12 +45,24 @@ export default {
 </script>
 
 <style scoped>
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+}
+
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+  background: fixed;
+  /* background: linear-gradient(to bottom right, #1e3c72, #2a5298); */
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -108,4 +120,5 @@ export default {
   color: #1e3c72;
   text-decoration: underline;
 }
+
 </style>
