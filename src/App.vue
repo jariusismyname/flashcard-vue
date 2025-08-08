@@ -8,6 +8,7 @@ import HelloWorld from './views/Login.vue'
 
 
 <style scoped>
+
 .logo {
   height: 6em;
   padding: 1.5em;

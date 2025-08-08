@@ -1,5 +1,17 @@
 <template>
+  <body class="login">
+    
+  
   <div class="login-container">
+    <!-- Left: Welcome panel -->
+    <div class="welcome-panel">
+      <div class="welcome-overlay">
+        <h2>Welcome to FlashCard Mastery!</h2>
+        <p>Learn, revise, and master your knowledge with ease.</p>
+      </div>
+    </div>
+
+    <!-- Right: Login panel -->
     <div class="login-card">
       <h2>Login</h2>
       <form @submit.prevent="login">
@@ -13,8 +25,9 @@
         <router-link to="/register">Register</router-link>
       </p>
     </div>
-  </div>
+  </div></body>
 </template>
+
 
 <script>
 import { ref } from "vue";
@@ -45,39 +58,68 @@ export default {
 </script>
 
 <style scoped>
-/* Reset default margin and padding */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
-  height: 100%;
-}
-
 .login-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  background: fixed;
-  /* background: linear-gradient(to bottom right, #1e3c72, #2a5298); */
-  font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+  overflow: hidden;
 }
 
-.login-card {
-  background-color: white;
-  padding: 2rem 3rem;
+/* Left side */
+.welcome-panel {
+  flex: 1;
+  background-image: url('../assets/welcome-image.jpg'); /* Use correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body{
+  margin: 0;
+}
+
+.welcome-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+  padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: white;
   text-align: center;
-  width: 300px;
+}
+
+.welcome-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-overlay p {
+  font-size: 1.1rem;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Right side */
+.login-card {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
 }
 
 .login-card h2 {
   color: #1e3c72;
   margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
 }
 
 .login-card input {
@@ -98,7 +140,7 @@ body, html {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  margin-top: 1rem;
 }
 
 .login-card button:hover {
@@ -106,19 +148,46 @@ body, html {
 }
 
 .error {
-  color: red;
+  background-color: #ffe6e6;
+  border: 1px solid #ffaaaa;
+  color: #cc0000;
+  padding: 0.5rem;
+  border-radius: 6px;
+  text-align: center;
   margin-top: 1rem;
-  font-size: 0.9rem;
 }
 
 .register-link {
   margin-top: 1.5rem;
   font-size: 0.9rem;
+  text-align: center;
 }
 
 .register-link a {
   color: #1e3c72;
   text-decoration: underline;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .welcome-panel {
+    display: none; /* better than visibility: hidden because it removes the space */
+  }
+
+  .login-container {
+    flex-direction: column;
+  }
+  
+
+  .login-card {
+ background-image: url("../assets/bg.avif");
+ background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+  .login {
+    margin: 0;
+  }
 }
 
 </style>
